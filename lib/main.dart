@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // Ganti candiList[0] menjadi candiList[1] atau candiList[2]
-      // untuk menguji data candi lainnya, sesuai materi slide.
-      home: DetailScreen(candi: candiList[0]),
+      // Ganti candiList[0] menjadi candiList[1] hingga candiList[9]
+      // untuk menguji data 10 candi yang tersedia sesuai aset di proyek.
+      home: DetailScreen(candi: candiList[9]),
     );
   }
 }

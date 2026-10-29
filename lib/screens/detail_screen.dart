@@ -13,6 +13,100 @@ class DetailScreen extends StatelessWidget {
   // Constructor DetailScreen; objek candi wajib diberikan.
   const DetailScreen({super.key, required this.candi});
 
+  // Fungsi pembantu untuk menampilkan foto galeri (mendukung URL web dan path lokal).
+  Widget _buildGalleryItem(String path) {
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      return CachedNetworkImage(
+        imageUrl: path,
+        width: 120,
+        height: 120,
+        fit: BoxFit.cover,
+        // Indikator loading saat gambar sedang diunduh.
+        placeholder: (context, url) => Container(
+          width: 120,
+          height: 120,
+          color: Colors.deepPurple[50],
+          child: const Center(
+            child: SizedBox(
+              width: 24,
+              height: 24,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
+          ),
+        ),
+        // Fallback jika gambar gagal dimuat (misal offline atau URL bermasalah).
+        errorWidget: (context, url, error) => Container(
+          width: 120,
+          height: 120,
+          color: Colors.deepPurple[50],
+          child: const Icon(Icons.broken_image, color: Colors.deepPurple),
+        ),
+      );
+    } else {
+      // Menampilkan gambar dari aset lokal.
+      return Image.asset(
+        path,
+        width: 120,
+        height: 120,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) => Container(
+          width: 120,
+          height: 120,
+          color: Colors.deepPurple[50],
+          child: const Icon(Icons.broken_image, color: Colors.deepPurple),
+        ),
+      );
+    }
+  }
+
+  // Fungsi untuk menampilkan pop-up pembesar gambar saat foto galeri diketuk.
+  void _showEnlargedImage(BuildContext context, String path) {
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        insetPadding: const EdgeInsets.all(16),
+        child: Stack(
+          alignment: Alignment.topRight,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: path.startsWith('http')
+                  ? CachedNetworkImage(
+                      imageUrl: path,
+                      fit: BoxFit.contain,
+                      placeholder: (context, _) => Container(
+                        color: Colors.black26,
+                        height: 200,
+                        child: const Center(child: CircularProgressIndicator()),
+                      ),
+                      errorWidget: (context, url, error) => Container(
+                        color: Colors.black54,
+                        padding: const EdgeInsets.all(32),
+                        child: const Icon(Icons.broken_image, color: Colors.white, size: 48),
+                      ),
+                    )
+                  : Image.asset(
+                      path,
+                      fit: BoxFit.contain,
+                    ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CircleAvatar(
+                backgroundColor: Colors.black54,
+                child: IconButton(
+                  icon: const Icon(Icons.close, color: Colors.white),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   // Fungsi build menyusun tiga bagian layar: Header, Info, dan Gallery.
   @override
   Widget build(BuildContext context) {
@@ -124,25 +218,35 @@ class DetailScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Divider(color: Colors.deepPurple.shade100),
-                  // Judul galeri.
-                  const Text('Galeri', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  // Judul galeri beserta jumlah foto yang tersedia.
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Galeri', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                      Text(
+                        '${candi.imageUrls.length} Foto',
+                        style: TextStyle(fontSize: 12, color: Colors.deepPurple.shade400, fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
                   const SizedBox(height: 10),
-                  // ListView horizontal memerlukan tinggi pasti dari SizedBox.
+                  // ListView horizontal dengan tinggi proporsional.
                   SizedBox(
-                    height: 100,
+                    height: 120,
                     child: ListView.builder(
                       // Menggeser galeri ke samping.
                       scrollDirection: Axis.horizontal,
-                      // Jumlah item mengikuti jumlah URL foto.
+                      // Jumlah item mengikuti seluruh jumlah foto di imageUrls.
                       itemCount: candi.imageUrls.length,
-                      // Membuat satu widget untuk tiap indeks foto.
+                      // Membuat widget untuk tiap foto.
                       itemBuilder: (context, index) {
+                        final imagePath = candi.imageUrls[index];
                         return Padding(
                           // Memberi jarak di sisi kanan tiap foto.
                           padding: const EdgeInsets.only(right: 8),
                           child: GestureDetector(
-                            // Callback ketuk foto masih kosong seperti pada slide.
-                            onTap: () {},
+                            // Membuka pratinjau gambar saat foto diketuk.
+                            onTap: () => _showEnlargedImage(context, imagePath),
                             child: Container(
                               // Bingkai foto galeri.
                               decoration: BoxDecoration(
@@ -151,21 +255,7 @@ class DetailScreen extends StatelessWidget {
                               ),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
-                                // Memuat foto dari URL yang sesuai dengan index.
-                                child: CachedNetworkImage(
-                                  imageUrl: candi.imageUrls[index],
-                                  width: 120,
-                                  height: 120,
-                                  fit: BoxFit.cover,
-                                  // Placeholder tampil selama gambar diunduh.
-                                  placeholder: (context, url) => Container(
-                                    width: 120,
-                                    height: 120,
-                                    color: Colors.deepPurple[50],
-                                  ),
-                                  // Ikon error tampil jika gambar gagal dimuat.
-                                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                                ),
+                                child: _buildGalleryItem(imagePath),
                               ),
                             ),
                           ),
@@ -173,7 +263,7 @@ class DetailScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 6),
                   // Petunjuk galeri yang ditampilkan kepada pengguna.
                   const Text('Tap untuk memperbesar', style: TextStyle(fontSize: 12, color: Colors.black54)),
                 ],

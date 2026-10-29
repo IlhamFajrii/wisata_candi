@@ -16,9 +16,10 @@ var candiList = [
     type: 'Candi Buddha',
     imageAsset: 'images/borobudur.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/4f/71/borobudur-and-the-sky.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/5d/36/borobudur-airial-view.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/4d/c7/borobudur-and-the-sky.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/47/0e/borobudur-sunset-moment.jpg',
     ],
   ),
   // 1. Data Candi Prambanan
@@ -31,9 +32,11 @@ var candiList = [
     type: 'Candi Hindu',
     imageAsset: 'images/prambanan.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'images/prambanan.jpeg',
+      'http://media-cdn.tripadvisor.com/media/photo-o/11/d3/f4/02/main-prambanan-temple.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/d3/f3/fb/main-prambanan-temple.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/21/b5/prambanan-diwaktu-malam.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/21/a1/prambanan-yang-luas-dan.jpg',
     ],
   ),
   // 2. Data Candi Mendut
@@ -46,9 +49,11 @@ var candiList = [
     type: 'Candi Buddha',
     imageAsset: 'images/mendut.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'images/mendut.jpeg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/08/8d/bd/dc/photo1jpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/08/30/84/fe/detail.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/07/9c/66/49/parc-du-monastere.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/07/64/89/fe/candi-mendut-temple.jpg',
     ],
   ),
   // 3. Data Candi Plaosan
@@ -61,9 +66,11 @@ var candiList = [
     type: 'Candi Buddha',
     imageAsset: 'images/plaosan.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'images/plaosan.jpeg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/15/64/fe/2c/candi-plaosan-nan-exotic.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/0b/9b/16/eb/candi-plaosan-merupakan.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/04/d1/be/8d/candi-plaosan.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/28/14/e5/d4/caption.jpg',
     ],
   ),
   // 4. Data Candi Sewu
@@ -76,9 +83,10 @@ var candiList = [
     type: 'Candi Buddha',
     imageAsset: 'images/sewu.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'https://media-cdn.tripadvisor.com/media/photo-o/16/29/03/ec/dsc-5480-largejpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/13/9a/31/8e/caption.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/14/78/fd/64/dsc-0395-largejpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/16/10/f6/55/20181224-104447-largejpg.jpg',
     ],
   ),
   // 5. Data Candi Kalasan
@@ -91,9 +99,10 @@ var candiList = [
     type: 'Candi Buddha',
     imageAsset: 'images/kalasan.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/49/7f/c6/img-20171102-100329-largejpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/0d/d1/15/1b/papan-nama-peringatan.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/0d/b4/4a/9d/caption.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/0d/bd/3b/88/20161127-152738-largejpg.jpg',
     ],
   ),
   // 6. Data Candi Sari
@@ -106,9 +115,10 @@ var candiList = [
     type: 'Candi Buddha',
     imageAsset: 'images/sari.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'http://media-cdn.tripadvisor.com/media/photo-o/0d/7a/26/27/p-20150104-102350-hdr.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/17/e4/b5/32/komplek-candi-sari.jpg',
+      'http://media-cdn.tripadvisor.com/media/photo-o/13/46/0c/0e/cube.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/13/46/09/6d/high-wall.jpg',
     ],
   ),
   // 7. Data Candi Lumbung
@@ -121,9 +131,10 @@ var candiList = [
     type: 'Candi Buddha',
     imageAsset: 'images/lumbung.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'https://media-cdn.tripadvisor.com/media/photo-o/28/11/e1/80/lumbung-temple.jpg',
+      'http://media-cdn.tripadvisor.com/media/photo-o/28/11/e1/73/lumbung-temple.jpg',
+      'http://media-cdn.tripadvisor.com/media/photo-o/28/11/e1/21/lumbung-temple.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/28/11/e1/33/lumbung-temple.jpg',
     ],
   ),
   // 8. Data Candi Jago
@@ -136,9 +147,10 @@ var candiList = [
     type: 'Candi Hindu-Buddha',
     imageAsset: 'images/jago.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
     ],
   ),
   // 9. Data Candi Singosari
@@ -151,9 +163,10 @@ var candiList = [
     type: 'Candi Hindu-Buddha',
     imageAsset: 'images/singosari.jpeg',
     imageUrls: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600',
-      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600',
-      'https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=600',
+      'https://media-cdn.tripadvisor.com/media/photo-o/06/c9/d4/f2/candi-singosari.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/1a/ca/37/49/candi-cungkup-candirenggo.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/15/a2/c0/8d/dvarapala.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/15/a2/c0/88/singosari-temple-kala.jpg',
     ],
   ),
 ];

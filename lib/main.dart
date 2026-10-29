@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       // Ganti candiList[0] menjadi candiList[1] hingga candiList[9]
       // untuk menguji data 10 candi yang tersedia sesuai aset di proyek.
-      home: DetailScreen(candi: candiList[9]),
+      home: DetailScreen(candi: candiList[0]),
     );
   }
 }
